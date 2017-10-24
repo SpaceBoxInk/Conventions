@@ -71,8 +71,8 @@ et pas
  19. Variables and functions start with a lowercase letter.
  20. Classes always start with a capital letter.
  21. Each new word in a name starts with a capital letter [4].
- 22. Member variables start with "m_".
- 23. Do not use pseudo Hungarian style.\
+ 22. Member variables start with "_" comme "_nom".
+ 23. Ne pas utiliser du pseudo Hungarian style.\
           Example:
 ```cpp
 m_bSomeBoolean, m_pSomePointer  // wrong
@@ -87,81 +87,46 @@ m_someBoolean, m_somePointer    // correct
               QString  aStringToUse;
               int      anInt;
               double   aDoubleNumberToUse;
- 26. Use static const variables instead of defining integers or floats.
-          Rationale:
-              This provides type-safety.
+ 26. Utiliser les static const pour les constantes !\
+          Raison:\
+              Pour la sureté des types.
 
 
 ## Casting:
 --------
- 27. Use C++ style cast like static_cast, dynamic_cast instead of C style
-      cast as it asserts the purpose of the cast.
+ 27. Utiliser les cast du C++ comme static_cast, dynamic_cast au lieu de ceux du C
 ```cpp
 Class* t = static_cast<Class*>(object);
 SubClass* t = dynamic_cast<SubClass*>(object);
 ```
 et pas :
 ~~SubClass* t = (SubClass*)object;~~
-      Also try to use Qt casts like qobject_cast, qgraphicsitem_cast in 
-      place of dynamic_cast wherever possible as the Qt style casts succeeds
-      even across libraries.
-      It doesn't mean dynamic casts shouldn't be used though. Use them
-      wherever it is impossible to use Qt's cast.
 
-Includes:
+## Includes:
 ---------
- 29.) Include own header first (checked by Krazy [6]).
- 30.) Include Qt QClasses in angle brackets (checked by Krazy [6]).
-      But do not add the QtModule like QtGui, because this will change
-      in Qt5 and compilation will break.
-          Example:
-              #include <QtGui/QMenu>  // wrong
-              #include <QMenu>        // correct
- 31.) Include KDE KClasses in angle brackets (checked by Krazy [6]).
-          Example:
-              #include <kmessagebox.h>
- 32.) Do not add a path to the include statement.
-          Example:
-              #include "../uml.h"  // wrong
-              #include "uml.h"     // correct
-          Rationale:
-              Paths are set in the make files. Rearranging or moving files
-              should not be followed by source code editing.
- 33.) Header includes should be listed in the following order and grouped:
-        - own header
-        - Umbrello includes
-        - KDE includes
-        - Qt includes
- 34.) The headers inside each group should be sorted.
-          Rationale:
-              For ease of locating them.
-          Tip: 
-              Kate/KDevelop users can sort the headers automatically.
-              Select the lines you want to sort, then
-              Tools -> Filter Selection Through Command -> "sort".
-              In vim the same can be achieved by marking the block, and then
-              doing ":sort". 
-              In emacs, you can mark the block and then do "M-x sort-lines".	
- 35.) Includes in a header file should be kept to the absolute minimum, as
-      to keep compile times low. This can be achieved by using forward
-      declarations.
-      Forward declarations work for pointers and const references.
+ 28. Inclure ses headers d'abord.
+ 29. Inclure ensuite les headers systemes
+ 30. Les includes des headers doivent etre minimale, du au temps de compilation.\
+          Cela peut etre fait par des "forward declare" puis ensuite inclure dans les sources(.cpp)\
+      les "Forward declarations" marchent pour les pointers et les const references.
 
 
-Include guards:
+## Include guards:
 ---------------
- 36.) Include macro characters are all in uppercase letters.
+ 31. Les include macro doivent etre toutes en majuscules.\
           Example:
-              #ifndef MyFileName_h    // wrong
-              #ifndef MY_FILE_NAME_H  // correct
- 37.) Do not use leading or trailing underscores on the include guard macro
+```cpp
+#ifndef MyFileName_h    // wrong
+#ifndef MY_FILE_NAME_H  // correct
+```
+ 32. Do not use leading or trailing underscores on the include guard macro
       as they are reserved for compiler/libc use (checked by Krazy [6]?).
           Example:
               #ifndef _MY_FILE_NAME_H_  // wrong
               #ifndef MY_FILE_NAME_H    // correct
 
 
-Doxygen comments:
+## Doxygen comments:
 -----------------
  38.) Every public item must have a doxygen comment.
  39.) Doxygen comments look like (see also [9]):
