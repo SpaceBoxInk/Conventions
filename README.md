@@ -1,100 +1,183 @@
 # Conventions
-## Formattage:
+## Git
 -----------
-### 1. Indentation:
-1. Do not use tabs [4]
-1. Indentations are 4 characters deep [4].
+### Formattage
+- Toujours faire un nom de commit explicite !! :
+  - NON ! :
+    - correction
+    - loadMusic fait
+    - ghrksj,gksdnkgj
+    - test
+    - IHM fini
+    - wallah
+    - meh
+    - ...
+          
+  - OUI :) :
+    - [FONCTIONAL] Correction du lancement de l'IHM (image apparait)
+    - [ToTEST] ajout de la coloration syntaxique (juste pour quelque mots)
 
-### 2. Whitespace:
-3. Do not leave whitespaces at the end of lines.
-1. Use blank lines to group statements [4].
-1. Use only one empty line to separate items [4].
-1. Use one space after each keyword [4].\
+- En plus du nom du commit explicite, il faut souvent une description (les listes c'est bien) !! ex :
+```
+[ToTEST] ajout de la coloration syntaxique (juste pour quelque mots)
+# ligne a laisser blanche
+    - coloration pour :
+      - si
+      - sinon
+      - fin
+      - else
+```
+ou
+```
+[ToTEST] ajout de la coloration syntaxique (juste pour quelque mots)
+# ligne a laisser blanche
+    - coloration pour :
+      - les mots clés
+      - quelques fonctions importantes (avancer, reculer ...)
+      - commencement pour les variables (juste la recupération pas encore la coloration)
+```
+
+- Toujours mettre un flag avant chaque message parmis ceux-ci (si il en manques, venez me voir) :
+  - [FONCTIONAL] : fonctionnel
+  - [ToTEST] : à tester
+  - [INSTABLE] : instable, on sait que ca marche pas, mais on a du commit
+- Vous pouvez créer des alias (-e : permet l'edition meme avec un message) /!\ le nom de l'alias est à changer (ex cFonct ou commitFonct ...): 
+<pre>
+git config --global alias.<b>nomAlias</b> 'git commit -m "[FONCTIONNAL] " -e'
+git config --global alias.<b>nomAlias</b> 'git commit -m "[ToTEST] " -e'
+git config --global alias.<b>nomAlias</b> 'git commit -m "[INSTABLE] " -e'
+</pre>
+
+- Apres le flag, mettre le mot qui resume votre commit :
+  - add/ajout
+  - fix
+  - modify/modifie
+
+###  Workflow
+- Commit dès qu'une tache est terminée !
+- Si vous n'arrivez pas à resumer un commit dans son nom, qu'il manques des choses,\
+  c'est qu'il faut diviser en plusieurs commit (vous pouvez utiliser git commit -p ou -i)
+- une branche par fonctionnalité !!
+- dès que vous pensez que votre branche est prête, faite un pull-request (pas un merge) donc sur GitHub dans develop
+- Rappel du workflow :
+![GitFlow](https://www.braintime.de/wp-content/uploads/2014/09/4-2-1-1-gitflow.png)
+La branche principale est develop, mais on passe en fait par les branches thématiques feature/??? et des Pull-Request.\
+Puis on merge dans release pour préparer la prochaine version public et enfin on merge dans master pour le public (et on tag genre : v1.1).\
+Parfois il faut corriger un bogue rapidement et on par par hotfix et on remerge dans master directement.
+
+## Formattage du code :
+-----------
+### 1. Indentation :
+1. NE PAS UTILISER DE TABULATIONS !! utiliser des espaces (dans les IDE regarder dans les parametres de formattage).
+1. L'indentation est de 4 caractères.
+
+### 2. Espaces :
+3. Ne laisser pas d'espaces en fin de ligne.
+1. Faites des sauts de ligne pour grouper des instructions/declarations.
+1. Utiliser seulement un saut de ligne pour grouper.
+1. Utiliser un espace après chaque mot clé.\
           Example:
 ```cpp
 if(   // wrong
 if (  // correct
 ```
-7. Usage of whitespaces between an opening and closing parenthesis
-      (e.g. if- and for-statments, function calls) is up to the developer.\
+7. Usage des espace dans les parentheses
+      (e.g. if- et for-, function calls) faite comme vous voulez.\
           Example:
 ```cpp
 if (i < 5)                    <->  if ( i < 5 )
 calculateSalary(age, years);  <->  calculateSalary( age, years ); 
 ```
-8. For pointers or references, use
-      a single space after '*' or '&', but not before (C++ style),\
+8. Pour les pointers ou les references, Utiliser\
+      un simple espace après '*' ou après '&', mais pas avant (C++ style),\
           Example:
 ```cpp
-T* v and T& v
+T* v;
+T& v;
 ```
 **Attention:**
           
 ```cpp
 char* i, j;  // i is declared pointer to char, while j is declared char, donc à ne pas faire
 ```
-9. No space after a cast [4].
-1. Do not use spaces around '.' or '->',
-      nor between unary operators and operands.
+9. Pas d'espace après un cast.
+1. Pas d'espaces autours de '.' ou '->',
+      ni entre les operateurs unaires ni les operandes.
 
-### 3. Braces:
- 11. Function implementations, class, struct and namespace declarations
-      always have the opening brace on the start of a line [4].
- 12. For all other constructs (if, switch, for, ...), the left curly brace
-      goes on the same line as the start of the statement [4].
- 13. Use curly braces even when the body of a conditional statement contains
-      only one line [4].
+### 3. Accolades :
+ 11. Les implementations de fonction, les classes, les struct et les declarations de namespace\
+      on toujours leurs accolade ouvrante sur le debut de la ligne (suivante) :
+```c++
+class Test
+{
+  cout<<"test";
+}
+```
+ 12. Pour tous les autres (if, switch, for, ...), l'accolade ouvrante\
+      va sur la meme ligne que le debut de l'expression : 
+```c++
+if (true) {
+  cout<<"test";
+}
+```
+ 13. Utiliser toujours des blocs (accolades) meme s'il n'y a qu'une instruction (si jamais on doit en rajouter, cela reste consistant).
 
-### 4. Statements:
- 14. Do not put multiple statements on a single line.
+### 4. Instructions :
+ 14. Ne pas mettre plusieurs instructions sur la meme ligne.
 
-### 5. Switch statements:
- 15. Case labels are on the same column as the switch [4].
+### 5. Switch :
+ 15. Les case sont sur la meme colonne que le switch.
 
-### 6. Line breaks:
+### 6. Retour à la ligne :
  16. Try to keep lines shorter than 100 characters, inserting line breaks
       as necessary [4].
 
-### 7. Pointeurs:
- 17. En C++, un pointeur nul est 
+### 7. Pointeurs :
+ 17. En C++, un pointeur nul est
 ```cpp 
-0 ou nullptr
+nullptr
 ```
 et pas
 ```cpp 
 0l ou 0L ou NULL
 ```
 
-## Variable declaration:
+## Declaration de variable :
 ---------------------
- 18. Each variable declaration on a new line [4].
- 19. Variables and functions start with a lowercase letter.
- 20. Classes always start with a capital letter.
- 21. Each new word in a name starts with a capital letter [4].
- 22. Member variables start with "_" comme "_nom".
- 23. Ne pas utiliser du pseudo Hungarian style.\
+ 18. Declarer chaque variable sur une nouvelle ligne.
+ 19. les variables et les fonctions commencent par une minuscule.
+ 20. Les classes commences toujours par une **Majuscule** (n'est ce pas Jessy ;) ).
+ 21. Chaque nouveau mot dans un nom commence par une **Majuscule** :
+```cpp
+int varTest;
+class TestExemple{
+  public:
+  void methodeDeClasse();
+};
+```
+ 22. N'utiliser des enderscores "_" **que** pour les constantes `static int const TEST_CONSTANT;` sauf :
+ 23. Les attributs membre/fields/champs commence tous par "_" comme `string _nom;`.
+ 24. Ne pas utiliser du pseudo Hungarian style.\
           Example:
 ```cpp
-m_bSomeBoolean, m_pSomePointer  // wrong
-m_someBoolean, m_somePointer    // correct
+_bSomeBoolean, _pSomePointer  // wrong
+_someBoolean, _somePointer    // correct
 ```
- 24. Variables (objectName) in ui files start with "ui_".
-          Rationale:
-              This makes it possible to identify the source of the variable
-              (defined in class or in ui file).
- 25. Use vertical alignment to ease scanning of declarations.
+ 25. 
+ 26. Utiliser un alignement vertical pour faciliter la lecture des declarations :\
           Example:
-              QString  aStringToUse;
-              int      anInt;
-              double   aDoubleNumberToUse;
- 26. Utiliser les static const pour les constantes !\
+```cpp
+QString  aStringToUse;
+int      anInt;
+double   aDoubleNumberToUse;
+```
+ 27. Utiliser les static const pour les constantes !\
           Raison:\
               Pour la sureté des types.
 
-
-## Casting:
+## Casting :
 --------
- 27. Utiliser les cast du C++ comme static_cast, dynamic_cast au lieu de ceux du C
+ 28. Utiliser les cast du C++ comme static_cast, dynamic_cast au lieu de ceux du C
 ```cpp
 Class* t = static_cast<Class*>(object);
 SubClass* t = dynamic_cast<SubClass*>(object);
@@ -102,31 +185,31 @@ SubClass* t = dynamic_cast<SubClass*>(object);
 et pas :
 ~~SubClass* t = (SubClass*)object;~~
 
-## Includes:
+## Includes :
 ---------
- 28. Inclure ses headers d'abord.
- 29. Inclure ensuite les headers systemes
- 30. Les includes des headers doivent etre minimale, du au temps de compilation.\
+ 29. Inclure ses headers d'abord.
+ 30. Inclure ensuite les headers systemes
+ 31. Les includes des headers doivent etre minimale, du au temps de compilation.\
           Cela peut etre fait par des "forward declare" puis ensuite inclure dans les sources(.cpp)\
       les "Forward declarations" marchent pour les pointers et les const references.
 
 
-## Include guards:
+## Include guards :
 ---------------
- 31. Les include macro doivent etre toutes en majuscules.\
+ 32. Les include macro doivent etre toutes en majuscules.\
           Example:
 ```cpp
 #ifndef MyFileName_h    // wrong
 #ifndef MY_FILE_NAME_H  // correct
 ```
- 32. Do not use leading or trailing underscores on the include guard macro
+ 33. Do not use leading or trailing underscores on the include guard macro
       as they are reserved for compiler/libc use (checked by Krazy [6]?).
           Example:
               #ifndef _MY_FILE_NAME_H_  // wrong
               #ifndef MY_FILE_NAME_H    // correct
 
 
-## Doxygen comments:
+## Commantaires Doxygen :
 -----------------
  38.) Every public item must have a doxygen comment.
  39.) Doxygen comments look like (see also [9]):
@@ -141,7 +224,7 @@ et pas :
               The header files can be overviewed easier and read quicker.
 
 
-Header structure:
+## Structure de header :
 -----------------
  41.) According to policy, a C++ header file should contain only 1 publicly
       visible class.
@@ -170,7 +253,7 @@ Header structure:
       }
 
 
-C++:
+## C++ :
 ----
  43.) "const correctness" should be preserved as much as possible.
       Make all getters const.
@@ -178,7 +261,7 @@ C++:
       (checked by Krazy [6]).
 
 
-Metrics:
+## Metrics :
 --------
 - loc = lines of code
 - Refactor classes, which have more than 1000 loc per class.
