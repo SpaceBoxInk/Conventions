@@ -37,15 +37,17 @@ ou
       - commencement pour les variables (juste la recupération pas encore la coloration)
 ```
 
-- Toujours mettre un flag avant chaque message parmis ceux-ci (si il en manques, venez me voir) :
-  - [FONCTIONAL] : fonctionnel
+- Toujours mettre un flag avant chaque message parmis ceux-ci, trié par ordre de "stabilité" (si il en manques, venez me voir) :
+  - [STABLE] : fonctionnel, stable
   - [ToTEST] : à tester
-  - [INSTABLE] : instable, on sait que ca marche pas, mais on a du commit
+  - [INSTABLE] : le comportement est instable, on sait, mais on a du commit
+  - [ERROR] : la ca marche pas, DU TOUT, ca compile pas ou segmentation fault ou ...
 - Vous pouvez créer des alias (-e : permet l'edition meme avec un message) /!\ le nom de l'alias est à changer (ex cFonct ou commitFonct ...): 
 <pre>
-git config --global alias.<b>nomAlias</b> 'git commit -m "[FONCTIONNAL] " -e'
-git config --global alias.<b>nomAlias</b> 'git commit -m "[ToTEST] " -e'
-git config --global alias.<b>nomAlias</b> 'git commit -m "[INSTABLE] " -e'
+git config --global alias.<b>nomAlias</b> 'commit -m "[FONCTIONNAL] " -e'
+git config --global alias.<b>nomAlias</b> 'commit -m "[ToTEST] " -e'
+git config --global alias.<b>nomAlias</b> 'commit -m "[INSTABLE] " -e'
+git config --global alias.<b>nomAlias</b> 'commit -m "[ERROR] " -e'
 </pre>
 
 - Apres le flag, mettre le mot qui resume votre commit :
