@@ -67,6 +67,8 @@ Parfois il faut corriger un bogue rapidement et on par par hotfix et on remerge 
 
 ## Formattage du code :
 -----------
+Un fichier xml de formattage est fournie pour [eclipse](https://github.com/SpaceBoxInk/Conventions), de là vous pouvez cloner ou télécharger le repo.\
+Ensuite dans Eclipse > Window > preferences > C/C++ > Code Style > Formatter > bouton import
 ### 1. Indentation :
 1. NE PAS UTILISER DE TABULATIONS !! utiliser des espaces (dans les IDE regarder dans les parametres de formattage).
 1. L'indentation est de 4 caractères.
