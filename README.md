@@ -213,53 +213,69 @@ et pas :
 
 ## Commantaires Doxygen :
 -----------------
- 38.) Every public item must have a doxygen comment.
- 39.) Doxygen comments look like (see also [9]):
-      /**
-       * Here is the description...
-       * @param ...   ...
-       * @return      ...
-       */
- 40.) The comments for methods should be written in the implementation file (cpp).
-      The comments for the class should be written in the header file.
-          Rational:
+ 38. Every public item must have a doxygen comment.
+ 39. Doxygen comments look like ([see also](http://www.agapow.net/programming/tools/doxygen-cheatsheet/)):
+```cpp
+/**
+ * Here is the description...
+ * @param ...   ...
+ * @return      ...
+ */
+```
+ 40. The comments for methods should be written in the implementation file (cpp).
+      The comments for the class should be written in the header file.\
+          Raison :\
               The header files can be overviewed easier and read quicker.
 
 
 ## Structure de header :
 -----------------
- 41.) According to policy, a C++ header file should contain only 1 publicly
+ 41. According to policy, a C++ header file should contain only 1 publicly
       visible class.
- 42.) Use the following layout:
+ 42. Use the following layout:
+```cpp
+<license>
+<include guard>
+<includes>
 
-      <license>
-      <include guard>
-      <includes>
+namespace
+{
 
-      namespace
-      {
+/**
+* description
+*/
+class <Name> : public <Parent>
+{
+//========================>Attributes<========================
+private:
 
-      /**
-       * description
-       */
-      class <name> : public <parent>
-      {
-      public:
+//=======================>Constructors<=======================
+public:
+  <Name>();
+  virtual ~<Name>();
 
-      protected:
+private:
 
-      private:
+//=========================>Methods<==========================
+public:
 
-      };
+private:
 
-      }
+//=====================>Getters&Setters<======================
+public:
 
+private:
+
+};
+
+}
+```
 
 ## C++ :
 ----
- 43.) "const correctness" should be preserved as much as possible.
+ 43. "const correctness" should be preserved as much as possible.
       Make all getters const.
- 44.) It might be a good idea to make the constructors explicit
+ 44. It might be a good idea to make the constructors explicit
       (checked by Krazy [6]).
 
 
