@@ -71,7 +71,7 @@ Parfois il faut corriger un bogue rapidement et on par par hotfix et on remerge 
    - hotfix
    - release
    - develop
-   - feature/<nomFeatureExplicite>
+   - feature/**\<nomFeatureExplicite\>**
 ## Formattage du code :
 -----------
 Un fichier xml de formattage est fournie pour [eclipse](https://github.com/SpaceBoxInk/Conventions), de là vous pouvez cloner ou télécharger le repo.\
