@@ -66,7 +66,12 @@ git config --global alias.<b>nomAlias</b> 'commit -m "[ERROR] " -e'
 La branche principale est develop, mais on passe en fait par les branches thématiques feature/??? et des Pull-Request.\
 Puis on merge dans release pour préparer la prochaine version public et enfin on merge dans master pour le public (et on tag genre : v1.1).\
 Parfois il faut corriger un bogue rapidement et on par par hotfix et on remerge dans master directement.
-
+ - **Respecter le workflow**, une branche sera toujours :
+   - master
+   - hotfix
+   - release
+   - develop
+   - feature/<nomFeatureExplicite>
 ## Formattage du code :
 -----------
 Un fichier xml de formattage est fournie pour [eclipse](https://github.com/SpaceBoxInk/Conventions), de là vous pouvez cloner ou télécharger le repo.\
