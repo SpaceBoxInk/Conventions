@@ -151,7 +151,7 @@ et pas
 0l ou 0L ou NULL
 ```
 
-## Declaration de variable :
+## Nommage :
 ---------------------
  18. Declarer chaque variable sur une nouvelle ligne.
  19. les variables et les fonctions commencent par une minuscule.
@@ -172,7 +172,12 @@ class TestExemple{
 _bSomeBoolean, _pSomePointer  // wrong
 _someBoolean, _somePointer    // correct
 ```
- 25. 
+ 25. La premiere lettre de vos classes correspond à sa place dans le pattern MVC\
+    Exemple :
+```cpp
+class MClassModel; // une classe Model
+class CClassControler; // une classe controler
+```
  26. Utiliser un alignement vertical pour faciliter la lecture des declarations :\
           Example:
 ```cpp
@@ -186,7 +191,7 @@ double   aDoubleNumberToUse;
 
 ## Casting :
 --------
- 28. Utiliser les cast du C++ comme static_cast, dynamic_cast au lieu de ceux du C
+ 28. Utiliser les cast du C++ comme static_cast, dynamic_cast au lieu de ceux du C <a href="http://www.cplusplus.com/doc/tutorial/typecasting/#dynamic_cast" target="_blank">(details des casts)</a>
 ```cpp
 Class* t = static_cast<Class*>(object);
 SubClass* t = dynamic_cast<SubClass*>(object);
@@ -211,35 +216,37 @@ et pas :
 #ifndef MyFileName_h    // wrong
 #ifndef MY_FILE_NAME_H  // correct
 ```
- 33. Do not use leading or trailing underscores on the include guard macro
-      as they are reserved for compiler/libc use (checked by Krazy [6]?).
+ 33. Ne pas mettre d'underscores au debut des include guard\
           Example:
-              #ifndef _MY_FILE_NAME_H_  // wrong
-              #ifndef MY_FILE_NAME_H    // correct
+```hpp
+#ifndef _MY_FILE_NAME_H_  // wrong
+#ifndef MY_FILE_NAME_H_    // correct
+```
 
 
 ## Commantaires Doxygen :
 -----------------
- 38. Every public item must have a doxygen comment.
- 39. Doxygen comments look like ([see also](http://www.agapow.net/programming/tools/doxygen-cheatsheet/)):
+ 38. Tous les éléments doivent avoir un commentaire doxygen (class, methods, attribut spécifiques, element d'enum...)
+ 39. Les commentaires doxygen ressemblent ([see also](http://www.agapow.net/programming/tools/doxygen-cheatsheet/)):
 ```cpp
 /**
  * Here is the description...
  * @param ...   ...
+ * @param ...   ...
  * @return      ...
  */
+  <element>
 ```
- 40. The comments for methods should be written in the implementation file (cpp).
-      The comments for the class should be written in the header file.\
+ 40. Les commentaires pour les méthodes doivent etre ecrit dans l'implementation(cpp).
+      Les commentaires pour les classes/attribut doivent etre ecrit dans le header(hpp).\
           Raison :\
-              The header files can be overviewed easier and read quicker.
+              le header peut etre relue rapidement.
 
 
 ## Structure de header :
 -----------------
- 41. According to policy, a C++ header file should contain only 1 publicly
-      visible class.
- 42. Use the following layout:
+ 41. Un header(hpp) ne doit contenir qu'une seule et une seule classe public !!
+ 42. Utilisez le template suivant :
 ```cpp
 <license>
 <include guard>
@@ -280,10 +287,9 @@ private:
 
 ## C++ :
 ----
- 43. "const correctness" should be preserved as much as possible.
-      Make all getters const.
- 44. It might be a good idea to make the constructors explicit
-      (checked by Krazy [6]).
+ 43. La "const correctness" Doit etre preservé au mieux !!\
+      Rendez tout les getters const.
+ 44. Cela peut etre une bonne idée de rendre les constructeurs <pre>explicit</pre> 
 
 
 ## Metrics :
