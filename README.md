@@ -138,8 +138,7 @@ if (true) {
  15. Les case sont sur la meme colonne que le switch.
 
 ### 6. Retour à la ligne :
- 16. Try to keep lines shorter than 100 characters, inserting line breaks
-      as necessary [4].
+ 16. Toujours garder les lignes plus courtes que 100 caractères (utiliser des retours à la ligne).
 
 ### 7. Pointeurs :
  17. En C++, un pointeur nul est
@@ -153,6 +152,8 @@ et pas
 
 ## Nommage :
 ---------------------
+**Ne pas faire d'abreviations dans le nom de classe ou de variable !!**
+
  18. Declarer chaque variable sur une nouvelle ligne.
  19. les variables et les fonctions commencent par une minuscule.
  20. Les classes commences toujours par une **Majuscule** (n'est ce pas Jessy ;) ).
@@ -166,7 +167,7 @@ class TestExemple{
 ```
  22. N'utiliser des enderscores "_" **que** pour les constantes `static int const TEST_CONSTANT;` sauf :
  23. Les attributs membre/fields/champs commence tous par "_" comme `string _nom;`.
- 24. Ne pas utiliser du pseudo Hungarian style.\
+ 24. Ne pas utiliser du style pseudo Hungarian.\
           Example:
 ```cpp
 _bSomeBoolean, _pSomePointer  // wrong
@@ -193,16 +194,17 @@ double   aDoubleNumberToUse;
 --------
  28. Utiliser les cast du C++ comme static_cast, dynamic_cast au lieu de ceux du C <a href="http://www.cplusplus.com/doc/tutorial/typecasting/#dynamic_cast" target="_blank">(details des casts)</a>
 ```cpp
-Class* t = static_cast<Class*>(object);
-SubClass* t = dynamic_cast<SubClass*>(object);
+Class* t = static_cast<Class*>(object);        // correct
+SubClass* t = dynamic_cast<SubClass*>(object); // correct
 ```
-et pas :
-~~SubClass* t = (SubClass*)object;~~
-
+et pas celui là :
+```
+SubClass* t = (SubClass*)object; // wrong !!
+```
 ## Includes :
 ---------
  29. Inclure ses headers d'abord.
- 30. Inclure ensuite les headers systemes
+ 30. Inclure ensuite les headers systemes (eg `<iostream>`)
  31. Les includes des headers doivent etre minimale, du au temps de compilation.\
           Cela peut etre fait par des "forward declare" puis ensuite inclure dans les sources(.cpp)\
       les "Forward declarations" marchent pour les pointers et les const references.
@@ -219,12 +221,12 @@ et pas :
  33. Ne pas mettre d'underscores au debut des include guard\
           Example:
 ```hpp
-#ifndef _MY_FILE_NAME_H_  // wrong
+#ifndef _MY_FILE_NAME_H_   // wrong
 #ifndef MY_FILE_NAME_H_    // correct
 ```
 
 
-## Commantaires Doxygen :
+## Commentaires Doxygen :
 -----------------
  38. Tous les éléments doivent avoir un commentaire doxygen (class, methods, attribut spécifiques, element d'enum...)
  39. Les commentaires doxygen ressemblent ([see also](http://www.agapow.net/programming/tools/doxygen-cheatsheet/)):
@@ -289,11 +291,11 @@ private:
 ----
  43. La "const correctness" Doit etre preservé au mieux !!\
       Rendez tout les getters const.
- 44. Cela peut etre une bonne idée de rendre les constructeurs <pre>explicit</pre> 
+ 44. Cela peut etre une bonne idée de rendre les constructeurs `explicit` ( niveau avancé : renseignez vous ;) ) 
 
 
 ## Metrics :
 --------
 - loc = lines of code
-- Refactor classes, which have more than 1000 loc per class.
-- Refactor methods, which have more than  200 loc per method.
+- Refactor classes qui comportent plus de 1000 loc.
+- Refactor les methodes qui comportent plus de 200 loc.
