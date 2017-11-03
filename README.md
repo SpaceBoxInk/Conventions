@@ -14,7 +14,7 @@
     - ...
           
   - OUI :) :
-    - [FONCTIONAL] Correction du lancement de l'IHM (image apparait)
+    - [STABLE] Correction du lancement de l'IHM (image apparait)
     - [ToTEST] ajout de la coloration syntaxique (juste pour quelque mots)
 
 - En plus du nom du commit explicite, il faut souvent une description (les listes c'est bien) !! ex :
@@ -44,7 +44,7 @@ ou
   - [ERROR] : la ca marche pas, DU TOUT, ca compile pas ou segmentation fault ou ...
 - Vous pouvez créer des alias (-e : permet l'edition meme avec un message) /!\ le nom de l'alias est à changer (ex cFonct ou commitFonct ...): 
 <pre>
-git config --global alias.<b>nomAlias</b> 'commit -m "[FONCTIONNAL] " -e'
+git config --global alias.<b>nomAlias</b> 'commit -m "[STABLE] " -e'
 git config --global alias.<b>nomAlias</b> 'commit -m "[ToTEST] " -e'
 git config --global alias.<b>nomAlias</b> 'commit -m "[INSTABLE] " -e'
 git config --global alias.<b>nomAlias</b> 'commit -m "[ERROR] " -e'
