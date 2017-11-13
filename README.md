@@ -78,7 +78,7 @@ Un fichier xml de formattage est fournie pour [eclipse](https://github.com/Space
 Ensuite dans Eclipse > Window > preferences > C/C++ > Code Style > Formatter > bouton import
 ### 1. Indentation :
 1. NE PAS UTILISER DE TABULATIONS !! utiliser des espaces (dans les IDE regarder dans les parametres de formattage).
-1. L'indentation est de 4 caractères.
+1. L'indentation est de 2 caractères.
 
 ### 2. Espaces :
 3. Ne laisser pas d'espaces en fin de ligne.
