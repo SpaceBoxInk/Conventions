@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__add">__add = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__band">__band = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__bnot">__bnot = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__bor">__bor = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__bxor">__bxor = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__call">__call = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__concat">__concat = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__div">__div = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__eq">__eq = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__idiv">__idiv = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__index">__index = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__le">__le = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__len">__len = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__lt">__lt = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__mod">__mod = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__mul">__mul = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__newindex">__newindex = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__pow">__pow = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__shl">__shl = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__shr">__shr = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__sub">__sub = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__tostring">__tostring = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="__unm">__unm = ${meta}
+${cursor}</template><template autoinsert="true" context="LuaDocumentorTemplateContextType" deleted="false" description="callof declaration" enabled="true" id="org.eclipse.ldt.ui.templates.luadocumentor.callof" name="@callof">@callof #${type}</template><template autoinsert="true" context="LuaDocumentorTemplateContextType" deleted="false" description="extends type declaration" enabled="true" id="org.eclipse.ldt.ui.templates.luadocumentor.extends" name="@extends">@extends ${module}#${type} </template><template autoinsert="true" context="LuaDocumentorTemplateContextType" deleted="false" description="field declaration" enabled="true" id="org.eclipse.ldt.ui.templates.luadocumentor.field" name="@field">@field [parent=#${module_name}] #${type} ${name} ${description}</template><template autoinsert="true" context="LuaDocumentorTemplateContextType" deleted="false" description="field declaration in parent type block" enabled="true" id="org.eclipse.ldt.ui.templates.luadocumentor.fieldinparent" name="@fieldinparent">@field #${type} ${name} ${description}</template><template autoinsert="true" context="LuaDocumentorTemplateContextType" deleted="false" description="function declaration" enabled="true" id="org.eclipse.ldt.ui.templates.luadocumentor.function" name="@function">@function [parent=#${module_name}] ${name}</template><template autoinsert="true" context="LuaDocumentorTemplateContextType" deleted="false" description="list declaration" enabled="true" id="org.eclipse.ldt.ui.templates.luadocumentor.list" name="@list">@list &lt;#${type}&gt; ${description}</template><template autoinsert="true" context="LuaDocumentorTemplateContextType" deleted="false" description="map declaration" enabled="true" id="org.eclipse.ldt.ui.templates.luadocumentor.map" name="@map">@map &lt;#${keytype},#${valuetype}&gt; ${description}</template><template autoinsert="true" context="LuaDocumentorTemplateContextType" deleted="false" description="module declaration" enabled="true" id="org.eclipse.ldt.ui.templates.luadocumentor.module" name="@module">@module ${module_name}</template><template autoinsert="true" context="LuaDocumentorTemplateContextType" deleted="false" description="parameter declaration" enabled="true" id="org.eclipse.ldt.ui.templates.luadocumentor.param" name="@param">@param #${type} ${name} ${description}</template><template autoinsert="true" context="LuaDocumentorTemplateContextType" deleted="false" description="return type declaration" enabled="true" id="org.eclipse.ldt.ui.templates.luadocumentor.return" name="@return">@return #${type} ${description}</template><template autoinsert="true" context="LuaDocumentorTemplateContextType" deleted="false" description="type declaration" enabled="true" id="org.eclipse.ldt.ui.templates.luadocumentor.type" name="@type">@type ${name}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="For On List" enabled="true" id="org.eclipse.templates.for" name="for">for ${var} in ${list} do
+	${cursor}
+end</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="For On Dots" enabled="true" id="org.eclipse.templates.fordots" name="ford">for ${index}=1,select("#", ...) do
+	local ${temp} = select(${index}, ...)
+	${cursor}
+end</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="For On Table Using Ipairs Function" enabled="true" id="org.eclipse.templates.foripairs" name="fori">for ${key}, ${var} in ipairs(${table}) do
+	${cursor}
+end</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="Numeric For Loop" enabled="true" id="org.eclipse.templates.fornumeric" name="forn">for ${var}=${init}, ${limit} do
+	${cursor}
+end</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="For On Table Using Pairs Function" enabled="true" id="org.eclipse.templates.forpairs" name="forp">for ${key}, ${var} in pairs(${table}) do
+	${cursor}
+end</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="Numeric For Loop With Range" enabled="true" id="org.eclipse.templates.forrange" name="forr">for ${var}=${init}, ${limit}, ${range} do
+	${cursor}
+end</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="Function Declaration" enabled="true" id="org.eclipse.templates.function" name="function">function ${name}(${parameters})
+	${cursor}
+end</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="If Statement" enabled="true" id="org.eclipse.templates.if" name="if">if ${exp} then
+	${cursor}
+end</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="Variable Declaration" enabled="true" id="org.eclipse.templates.local" name="local">local ${variable}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="Variable Declaration With Initialization" enabled="true" id="org.eclipse.templates.localAssignment" name="loci">local ${variable} = ${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="Protected Function Call" enabled="true" id="org.eclipse.templates.pcall" name="pcall">local ${status}, ${result} = pcall(${functionNameOrBody}, ${param})
+if not ${status} then
+	${cursor}
+end</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="Classic Print Function" enabled="true" id="org.eclipse.templates.print" name="print">print("${string}")
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="Repeat Loop" enabled="true" id="org.eclipse.templates.repeat" name="repeat">repeat
+	${cursor}
+until ${exp}
+</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="table">${table} = {}
+${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="While Loop" enabled="true" id="org.eclipse.templates.while" name="while">while ${exp} do
+	${cursor}
+end</template></templates>
