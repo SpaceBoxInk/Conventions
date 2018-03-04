@@ -72,7 +72,7 @@ private:
 else</template><template autoinsert="true" context="org.eclipse.cdt.ui.text.templates.c" deleted="false" description="include system" enabled="true" name="include&lt;">#include &lt;${cursor}&gt;</template><template autoinsert="true" context="org.eclipse.cdt.ui.text.templates.c" deleted="false" description="include project" enabled="true" name="includep">#include "${cursor}"</template><template autoinsert="true" context="org.eclipse.cdt.ui.text.templates.c" deleted="false" description="include" enabled="true" name="iostream">#include &lt;iostream&gt;</template><template autoinsert="true" context="org.eclipse.cdt.ui.text.templates.c" deleted="false" description="main method" enabled="true" id="org.eclipse.cdt.ui.text.templates.c.main" name="main">int main(int argc, char **argv) {
 	${cursor}
 }
-</template><template autoinsert="true" context="org.eclipse.cdt.ui.text.templates.c" deleted="false" description="namespace declaration" enabled="true" id="org.eclipse.cdt.ui.text.templates.cpp.namespace" name="namespace">namespace ${name} {
+</template><template autoinsert="true" context="org.eclipse.cdt.ui.text.templates.c" deleted="false" description="" enabled="true" name="maybe_unused">[[maybe_unused]]</template><template autoinsert="true" context="org.eclipse.cdt.ui.text.templates.c" deleted="false" description="namespace declaration" enabled="true" id="org.eclipse.cdt.ui.text.templates.cpp.namespace" name="namespace">namespace ${name} {
 
 ${cursor}
 
@@ -161,9 +161,9 @@ int main() {
     CPPUNIT_NS::CompilerOutputter outputter(&amp;result, CPPUNIT_NS::stdCOut());
     outputter.write();
     return result.wasSuccessful() ? 0 : 1;
-}</template><template autoinsert="true" context="org.eclipse.cdt.ui.text.templates.c" deleted="false" description="upc_forall loop" enabled="true" id="org.eclipse.cdt.ui.text.templates.c.upc_forall" name="upc_forall">upc_forall (${var} = 0; ${var} &lt; THREADS; ${var}++; ${var}) {
+}</template><template autoinsert="true" context="org.eclipse.cdt.ui.text.templates.c" deleted="false" description="upc_forall loop" enabled="true" name="upc_forall">upc_forall (${var} = 0; ${var} &lt; THREADS; ${var}++; ${var}) {
 	${line_selection}${cursor}
-}</template><template autoinsert="true" context="org.eclipse.cdt.ui.text.templates.c" deleted="false" description="UPC_MAX_BLOCKSIZE keyword" enabled="true" id="org.eclipse.cdt.ui.text.templates.c.upc_max_blocksize" name="upc_max_blocksize">UPC_MAX_BLOCKSIZE</template><template autoinsert="true" context="org.eclipse.cdt.ui.text.templates.c" deleted="false" description="using a namespace" enabled="true" id="org.eclipse.cdt.ui.text.templates.cpp.using" name="using">using namespace ${name};
+}</template><template autoinsert="true" context="org.eclipse.cdt.ui.text.templates.c" deleted="false" description="UPC_MAX_BLOCKSIZE keyword" enabled="true" name="upc_max_blocksize">UPC_MAX_BLOCKSIZE</template><template autoinsert="true" context="org.eclipse.cdt.ui.text.templates.c" deleted="false" description="using a namespace" enabled="true" id="org.eclipse.cdt.ui.text.templates.cpp.using" name="using">using namespace ${name};
 </template><template autoinsert="true" context="org.eclipse.cdt.ui.text.templates.c" deleted="false" description="" enabled="true" name="what">virtual char const* what() const noexcept;</template><template autoinsert="true" context="org.eclipse.cdt.ui.text.templates.c" deleted="false" description="" enabled="true" name="while">while(${Condition}){
 	${cursor}
 }</template></templates>

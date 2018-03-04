@@ -46,7 +46,7 @@ end</template><template autoinsert="true" context="LuaUniversalTemplateContextTy
 ${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="Repeat Loop" enabled="true" id="org.eclipse.templates.repeat" name="repeat">repeat
 	${cursor}
 until ${exp}
-</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="table">${table} = {}
+</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="" enabled="true" name="table">${table} = {${content}}
 ${cursor}</template><template autoinsert="true" context="LuaUniversalTemplateContextType" deleted="false" description="While Loop" enabled="true" id="org.eclipse.templates.while" name="while">while ${exp} do
 	${cursor}
 end</template></templates>
